@@ -23,8 +23,8 @@ void draw() {
   }
 
 
-  LittleDudes(20);
-
+  DudeShape(20, height-20);
+  
   translate(15, 15);
   rotate(rotV);
   rotV += speed;
