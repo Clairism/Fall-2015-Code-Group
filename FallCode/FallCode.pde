@@ -1,22 +1,31 @@
 ArrayList<water> waters = new ArrayList<water>();
 
+float rotV,speed;
+
 void setup() {
   size(500, 500);
   waters.add(new water());
+   rotV = 0.1;
+   speed = 0.01;
 }
 
-
 void draw() {
-  if(mousePressed){
+   background(255);
+  if (mousePressed) {
     waters.add(new water());
   }
-  background(255);
   for (int i=0; i<waters.size(); i++) {
     water part = waters.get(i);
     part.update();
-    if(part.alive == false){
-    waters.remove(i);
-    
+    if (part.alive == false) {
+      waters.remove(i);
     }
   }
+    
+    
+    translate(15, 15);
+    rotate(rotV);
+    rotV += speed;
+    leftCorner();
+    Checker(0.5, -0.5);
 }
