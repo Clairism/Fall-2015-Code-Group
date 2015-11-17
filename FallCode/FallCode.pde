@@ -4,7 +4,6 @@ float rotV, speed;
 
 void setup() {
   size(500, 500);
-  waters.add(new water());
   rotV = 0.1;
   speed = 0.01;
 }
