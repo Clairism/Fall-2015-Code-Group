@@ -9,12 +9,14 @@ void setup() {
 void draw() {
   background(0);
 
-
+  LittleDudes(20);
+  
+  
   translate(15,15);
 
   rotate(rotV);
   rotV += speed;
-  leftCorner();
+  LeftCorner();
   
   Checker(0.5,-0.5);
 }
