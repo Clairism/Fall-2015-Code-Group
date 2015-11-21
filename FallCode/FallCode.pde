@@ -25,24 +25,20 @@ void draw() {
 
 
   DudeShape(20, height-20);
-  
+
   translate(15, 15);
   rotate(rotV);
   rotV += speed;
   //LeftCorner();
   //Checker(0.5, -0.5);
-  
-  for (int i=0; i<3;i++){
-     lights.add(new light());
-     light lightpart =  lights.get(i);
-     lightpart.LightsShape(50+i*20, 50+i*15, 30+i*5);
+
+  for (int i=0; i<3; i++) {
+    lights.add(new light());
+    light lightpart =  lights.get(i);
+    lightpart.LightsShape(i, 30+i*5);
+    
+    lightpart.Update();
   }
-}
 
-
-void mouseClicked(){
-  for (int i=0; i<lights.size();i++){
-     light lightpart =  lights.get(i);
-       lightpart.HideLight();
-    }
+  //lights[].Update();
 }

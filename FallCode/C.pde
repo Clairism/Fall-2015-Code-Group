@@ -2,26 +2,43 @@ class light {
 
   boolean isHide = false;
   color light = color(255, 225, 0);
-  void LightsShape(float x, float y, float size) {
+
+  PVector pos;
+
+  light() {
+
+    pos = new PVector(50, 50);
+  }
+
+  void LightsShape(float i, float size) {
     if (isHide) {
       noFill();
-      noStroke();
+      //noStroke();
     } else {
       fill(light); 
       stroke(0);
     }
 
     ellipseMode(CENTER);
-    ellipse(x, y, size, size/3);
+    ellipse(pos.x+i*20, pos.y+i*15, size, size/3);
     Checker(0.5, -0.5);
   }
 
+  void Update() {
+    if ( mouseX > pos.x && mouseX < pos.x+100 &&
+      mouseY > pos.y && mouseY < pos.y+100 ) {
+      if (mousePressed) {
+        for (int i=0; i<lights.size(); i++) {
+          light lightpart =  lights.get(i);
+          lightpart.HideLight();
+        }
+      }
+    }
+  }
 
-
-void HideLight() {
-  isHide = !isHide;
-}
-
+  void HideLight() {
+    isHide = !isHide;
+  }
 }
 
 //void LeftCorner() {
