@@ -10,10 +10,10 @@ void setup() {
   rotV = 0.1;
   speed = 0.01;
 
-  flowers = new flowerImg[15];
+  flowers = new flowerImg[18];
 
   for (int i = 0; i< flowers.length; i ++) {
-    flowers[i]= new flowerImg(i+45);
+    flowers[i]= new flowerImg(i+50);
   }
 }
 

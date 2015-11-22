@@ -3,27 +3,32 @@ class flowerImg {
   PImage flower;
   PVector pos, speed;
   float flowerSize;
+  float defaultSize;
   float flowerV = 20;
+  float x,y;
 
   flowerImg(float _imgSize) {
 
     flower = loadImage("flower.png");
 
     flowerSize = _imgSize; 
+    defaultSize = _imgSize; 
 
-    float x = random(flowerSize, width - flowerSize);
-    float y = random(height/2 + flowerSize, height - flowerSize);
+    x = random(flowerSize/2, width - flowerSize/2);
+    y = random(height/2 + flowerSize/2, height - flowerSize);
 
     pos = new PVector(x, y);
   }
 
   void Update() {
-    //tint(200, 255, 255, random(0, 255));
+
     image(flower, pos.x, pos.y, flowerSize, flowerSize);
 
     if (mousePressed && mouseY>height/2 ) {
       RotatingFlowers();
+      flowerSize = defaultSize + 15;
     } else {
+      flowerSize = defaultSize;
     }
   }
 
