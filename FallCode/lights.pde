@@ -7,7 +7,7 @@ class light {
 
   light() {
 
-    pos = new PVector(50, 50);
+    pos = new PVector(30,30);
   }
 
   void LightsShape(float i, float size) {
@@ -20,7 +20,7 @@ class light {
     }
 
     ellipseMode(CENTER);
-    ellipse(pos.x+i*20, pos.y+i*15, size, size/3);
+    ellipse(pos.x+i*30, pos.y+i*25, size, size/3);
     Checker(0.5, -0.5);
   }
 
