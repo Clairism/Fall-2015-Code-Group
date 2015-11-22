@@ -10,7 +10,7 @@ void setup() {
   rotV = 0.1;
   speed = 0.01;
 
-  flowers = new flowerImg[30];
+  flowers = new flowerImg[15];
 
   for (int i = 0; i< flowers.length; i ++) {
     flowers[i]= new flowerImg(i+45);
@@ -19,7 +19,7 @@ void setup() {
 
 void draw() {
 
-  background(0);
+  background(255);
   if (mousePressed) {
     waters.add(new water());
   }
